@@ -1,0 +1,64 @@
+
+
+@import "tailwindcss";
+
+@layer utilities {
+  .bg-primary {
+    @apply bg-indigo-500;
+  }
+  .hover\:bg-primary-dark:hover {
+    @apply bg-indigo-700;
+  }
+  .text-primary {
+    @apply text-indigo-900;
+  }
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Space Grotesk', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f9f9f9;
+  color: #333;
+}
+
+
+@layer utilities {
+  @keyframes blink {
+    0%,
+    100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0;
+    }
+  }
+
+  .animate-blink {
+    animation: blink 0.8s step-end infinite;
+  }
+
+  @keyframes loading {
+    0% {
+      transform: translateX(-100%);
+    }
+    100% {
+      transform: translateX(250%);
+    }
+  }
+
+  .animate-loading-bar {
+    animation: loading 0.8s ease infinite;
+  }
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
